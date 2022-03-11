@@ -66,11 +66,12 @@ public class CarMovement : MonoBehaviour
         StartCoroutine(DisableEngine(_turnOffEngineDelay));
     }
 
-    private IEnumerator DisableEngine(float delayTime)
+    public IEnumerator DisableEngine(float delayTime)
     {
-        yield return new WaitForSeconds(delayTime);
+        StopCoroutine(AccelerateCar(3f, _carController));
         _carController.ThrottleOff();
-        _carController.ReleaseBrakes();
+        _carController.BrakeAllWheels();
+        yield return new WaitForSeconds(delayTime);
         enabled = false;
     }
 

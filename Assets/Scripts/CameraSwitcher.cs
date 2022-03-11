@@ -12,7 +12,6 @@ public class CameraSwitcher : MonoBehaviour
         if (other.GetComponent<CarMovement>())
         {
             _firstTurnOffCamera.SetActive(false);
-            Time.timeScale = 0.1f;
             StartCoroutine(DelayDeactivation(_activeTimeInSeconds));
         }
     }
@@ -22,6 +21,5 @@ public class CameraSwitcher : MonoBehaviour
         yield return new WaitForSeconds(delayInSeconds);
         _secondTurnOffCamera.SetActive(false);
         gameObject.SetActive(false);
-        Time.timeScale = 1f;
     }
 }
