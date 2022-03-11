@@ -236,8 +236,6 @@ public class PrometeoCarController : MonoBehaviour
         localVelocityX = transform.InverseTransformDirection(carRigidbody.velocity).x;
         // Save the local velocity of the car in the z axis. Used to know if the car is going forward or backwards.
         localVelocityZ = transform.InverseTransformDirection(carRigidbody.velocity).z;
-
-        AnimateWheelMeshes();
     }
 
     public void CarSpeedUI()
@@ -328,7 +326,7 @@ public class PrometeoCarController : MonoBehaviour
         frontRightCollider.steerAngle = Mathf.Lerp(frontRightCollider.steerAngle, steeringAngle, steeringSpeed);
     }
 
-    void AnimateWheelMeshes()
+    public void AnimateWheelMeshes()
     {
         try
         {
@@ -362,12 +360,18 @@ public class PrometeoCarController : MonoBehaviour
         }
     }
 
+    public void AnimateReareWheelMeshes()
+    {
+        rearLeftMesh.transform.rotation *= Quaternion.Euler(Time.deltaTime * 700f, 0f, 0f);
+        rearRightMesh.transform.rotation *= Quaternion.Euler(Time.deltaTime * 700f, 0f, 0f);
+    }
+
     public void GoForward()
     {
         CheckDrift();
 
         throttleAxis += (Time.deltaTime * 3f);
-        if(throttleAxis > 1f)
+        if (throttleAxis > 1f)
         {
             throttleAxis = 1f;
         }
@@ -382,7 +386,7 @@ public class PrometeoCarController : MonoBehaviour
             {
                 ReleaseBrakes();
 
-                float x = 50f; 
+                float x = 50f;
                 frontLeftCollider.motorTorque = (accelerationMultiplier * x) * throttleAxis;
                 frontRightCollider.motorTorque = (accelerationMultiplier * x) * throttleAxis;
                 rearLeftCollider.motorTorque = (accelerationMultiplier * x) * throttleAxis;

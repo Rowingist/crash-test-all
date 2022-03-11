@@ -19,16 +19,4 @@ public class AnimatingParts : MonoBehaviour
         _wheelFR.name = "Wheel_FR";
         _body.name = "rustcar_510_RED";
     }
-
-    private void Start()
-    {
-        StartCoroutine(RefreshAnimator(_refreshDelay));
-    }
-
-    private IEnumerator RefreshAnimator(float actionTime)
-    {
-        _animator.enabled = false;
-        yield return new WaitForSeconds(actionTime);
-        _animator.enabled = true;
-    }
 }

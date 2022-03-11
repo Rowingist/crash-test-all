@@ -9,9 +9,10 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private PrometeoCarController _carController;
     [SerializeField] private float _moveSensitinity = 2f;
     [SerializeField] private float _backToLineSpeed = 5f;
+    [SerializeField] private float _turnOffEngineDelay = 3f;
     [SerializeField] private Animator _animator;
     [SerializeField] private float _firstAccelerationSeed = 40f;
-    [SerializeField] private CinemachineVirtualCamera _cinemachineVirtualCamera;
+    [SerializeField] private CinemachineVirtualCamera _shakingVirtualCamera;
 
     private Quaternion _startRotation;
     private Rigidbody _rigidbody;
@@ -30,18 +31,20 @@ public class CarMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touches.Length > 0)
-        {
-            _animator.SetTrigger("Accelerate");
-            StartCoroutine(AccelerateCar(0.5f, _carController));
-            _rigidbody.AddForce(transform.forward * _firstAccelerationSeed, ForceMode.Acceleration);
-            _cinemachineVirtualCamera.gameObject.SetActive(false);
-        }
+        _carController.Turn(_moveJoystick.Delta.x * _moveSensitinity);
+        _carController.AnimateReareWheelMeshes();
     }
-
     private void FixedUpdate()
     {
-        _rigidbody.rotation =  Quaternion.Lerp(_rigidbody.rotation, _startRotation, _backToLineSpeed * Time.deltaTime);
+        _rigidbody.rotation = Quaternion.Lerp(_rigidbody.rotation, _startRotation, _backToLineSpeed * Time.deltaTime);
+        if (Input.touches.Length == 0)
+        {
+            return;
+        }
+        _animator.SetTrigger("Accelerate");
+        StartCoroutine(AccelerateCar(3f, _carController));
+        _rigidbody.AddForce(transform.forward * _firstAccelerationSeed, ForceMode.Acceleration);
+        _shakingVirtualCamera.gameObject.SetActive(false);
     }
 
     private IEnumerator AccelerateCar(float actionTime, PrometeoCarController carController)
@@ -49,8 +52,8 @@ public class CarMovement : MonoBehaviour
         float time = 0;
         while (time < 1)
         {
-            _carController.Turn(_moveJoystick.Delta.x * _moveSensitinity);
             carController.GoForward();
+            carController.AnimateWheelMeshes();
             carController.RLWTireSkid.emitting = true;
             carController.RRWTireSkid.emitting = true;
             carController.isDrifting = true;
@@ -60,6 +63,14 @@ public class CarMovement : MonoBehaviour
         carController.RLWTireSkid.emitting = false;
         carController.RRWTireSkid.emitting = false;
         carController.isDrifting = false;
+        StartCoroutine(DisableEngine(_turnOffEngineDelay));
+    }
+
+    private IEnumerator DisableEngine(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        _carController.ThrottleOff();
+        _carController.ReleaseBrakes();
         enabled = false;
     }
 
