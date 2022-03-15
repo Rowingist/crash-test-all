@@ -22,7 +22,7 @@ public class VelocityZone : MonoBehaviour
         while (time < 1)
         {
             if (_isAccelerator)
-                carController.GoForward();
+                carController.MoveForward(2);
             else
                 carController.DecelerateCar();
 

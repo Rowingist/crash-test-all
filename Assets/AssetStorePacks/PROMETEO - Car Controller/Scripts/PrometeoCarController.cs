@@ -226,7 +226,6 @@ public class PrometeoCarController : MonoBehaviour
                 RRWTireSkid.emitting = false;
             }
         }
-
     }
 
     void Update()
@@ -236,6 +235,7 @@ public class PrometeoCarController : MonoBehaviour
         localVelocityX = transform.InverseTransformDirection(carRigidbody.velocity).x;
         // Save the local velocity of the car in the z axis. Used to know if the car is going forward or backwards.
         localVelocityZ = transform.InverseTransformDirection(carRigidbody.velocity).z;
+        AnimateWheelMeshes();
     }
 
     public void CarSpeedUI()
@@ -360,13 +360,7 @@ public class PrometeoCarController : MonoBehaviour
         }
     }
 
-    public void AnimateReareWheelMeshes()
-    {
-        rearLeftMesh.transform.rotation *= Quaternion.Euler(Time.deltaTime * 700f, 0f, 0f);
-        rearRightMesh.transform.rotation *= Quaternion.Euler(Time.deltaTime * 700f, 0f, 0f);
-    }
-
-    public void GoForward()
+    public void MoveForward(float speedInput)
     {
         CheckDrift();
 
@@ -386,16 +380,59 @@ public class PrometeoCarController : MonoBehaviour
             {
                 ReleaseBrakes();
 
-                float x = 50f;
-                frontLeftCollider.motorTorque = (accelerationMultiplier * x) * throttleAxis;
-                frontRightCollider.motorTorque = (accelerationMultiplier * x) * throttleAxis;
-                rearLeftCollider.motorTorque = (accelerationMultiplier * x) * throttleAxis;
-                rearRightCollider.motorTorque = (accelerationMultiplier * x) * throttleAxis;
+                WheelFrictionCurve newCurve = rearLeftCollider.forwardFriction;
+                newCurve.extremumSlip = 0.001f;
+                frontLeftCollider.forwardFriction = newCurve;
+                frontRightCollider.forwardFriction = newCurve;
+                rearLeftCollider.forwardFriction = newCurve;
+                rearRightCollider.forwardFriction = newCurve;
+
+                float targetTorque = (accelerationMultiplier * speedInput) * throttleAxis;
+                float clampedTorque = Mathf.Clamp(targetTorque, 0f, 2000f);
+                //frontLeftCollider.motorTorque = (accelerationMultiplier * speedInput) * throttleAxis;
+                //frontRightCollider.motorTorque = (accelerationMultiplier * speedInput) * throttleAxis;
+                rearLeftCollider.motorTorque = clampedTorque;
+                rearRightCollider.motorTorque = clampedTorque;
             }
             else
             {
                 ThrottleOff();
             }
+        }
+    }
+
+    public void BurnOutRearDrive(float speedInput)
+    {
+        throttleAxis += (Time.deltaTime * 3f);
+        if (throttleAxis > 1f)
+        {
+            throttleAxis = 1f;
+        }
+        if (speedInput > 0)
+        {
+            ReleaseBrakes();
+            isDrifting = true;
+        }
+        else if (speedInput < 0)
+        {
+            ThrottleOff();
+            BrakeAllWheels();
+            isDrifting = false;
+        }
+        DriftCarPS();
+
+        if (Mathf.RoundToInt(carSpeed) < maxSpeed)
+        {
+            BrakeFrontAxis();
+            WheelFrictionCurve newCurve = rearLeftCollider.forwardFriction;
+            newCurve.extremumSlip = 10f;
+            rearLeftCollider.forwardFriction = newCurve;
+            rearRightCollider.forwardFriction = newCurve;
+
+            float targetTorque = (accelerationMultiplier * speedInput) * throttleAxis;
+            float clampedTorque = Mathf.Clamp(targetTorque, 0f, 2000f);
+            rearLeftCollider.motorTorque = clampedTorque;
+            rearRightCollider.motorTorque = clampedTorque;
         }
     }
 
@@ -480,10 +517,10 @@ public class PrometeoCarController : MonoBehaviour
 
     public void BrakeAllWheels()
     {
-        frontLeftCollider.brakeTorque = brakeForce;
-        frontRightCollider.brakeTorque = brakeForce;
-        rearLeftCollider.brakeTorque = brakeForce;
-        rearRightCollider.brakeTorque = brakeForce;
+        frontLeftCollider.brakeTorque = brakeForce * 100f;
+        frontRightCollider.brakeTorque = brakeForce * 100f;
+        rearLeftCollider.brakeTorque = brakeForce * 100f;
+        rearRightCollider.brakeTorque = brakeForce * 100f;
     }
 
     public void BrakeFrontAxis()

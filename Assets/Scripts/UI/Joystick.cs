@@ -5,8 +5,6 @@ public class Joystick : MonoBehaviour
 {
     [SerializeField] private RectTransform _stick;
     [SerializeField] private RectTransform _backGround;
-    [SerializeField] private float _minX;
-    [SerializeField] private float _maxX;
     [SerializeField] private float _radius = 100f;
 
     private int _currentFingerId = -1;
@@ -14,6 +12,7 @@ public class Joystick : MonoBehaviour
 
     public Vector2 Value { get; private set; }
     public Vector2 Delta { get; private set; }
+    public Vector2 OldValue => _oldValue;
 
     private void OnValidate()
     {

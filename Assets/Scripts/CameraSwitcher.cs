@@ -9,7 +9,7 @@ public class CameraSwitcher : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<CarMovement>())
+        if (other.GetComponentInParent<CarMovementHandler>())
         {
             _firstTurnOffCamera.SetActive(false);
             StartCoroutine(DelayDeactivation(_activeTimeInSeconds));

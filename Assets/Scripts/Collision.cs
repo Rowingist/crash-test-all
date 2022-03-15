@@ -10,7 +10,7 @@ public class Collision : MonoBehaviour
 
     private void OnCollisionEnter(UnityEngine.Collision collision)
     {
-        if(collision.gameObject.TryGetComponent(out CarMovement car))
+        if(collision.gameObject.TryGetComponent(out CarMovementHandler car))
         {
             float relativePositionX = transform.position.x - car.transform.position.x;
             Vector3 flyDirection = Vector3.up * _flyUpwardsForce + Vector3.forward * _flyForwardForce;
@@ -24,7 +24,6 @@ public class Collision : MonoBehaviour
             {
                 _collider.isTrigger = true;
                 ragdollSwitcher.MakePhysical();
-                ragdollSwitcher.GetComponent<Human>().enabled = false;
                 ragdollSwitcher.GetSpine().AddForce(flyDirection, ForceMode.VelocityChange);
             }
             else
