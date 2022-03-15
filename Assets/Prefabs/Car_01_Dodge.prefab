@@ -821,7 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933454581237786419}
   - component: {fileID: 8357820119831200491}
-  - component: {fileID: 48660088754264623}
+  - component: {fileID: 7807515245970386863}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -851,8 +851,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3157531629918046561}
   m_Mesh: {fileID: 2959467708922500008, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
---- !u!23 &48660088754264623
-MeshRenderer:
+--- !u!137 &7807515245970386863
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -865,7 +865,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 3
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -895,7 +895,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 2959467708922500008, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: -0.0019096732, y: 0.7297673, z: -0.03328681}
+    m_Extent: {x: 1.030062, y: 0.6017134, z: 2.4282186}
+  m_DirtyAABB: 0
 --- !u!1 &3441115851126018136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8622980670970958052}
   - component: {fileID: 4032109562840432516}
-  - component: {fileID: 2496954811731247808}
+  - component: {fileID: 1297812639532306821}
   m_Layer: 0
   m_Name: Door_R
   m_TagString: Untagged
@@ -1466,8 +1484,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4155159282662717733}
   m_Mesh: {fileID: 7636907590721165001, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
---- !u!23 &2496954811731247808
-MeshRenderer:
+--- !u!137 &1297812639532306821
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1480,7 +1498,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 3
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -1508,7 +1526,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 7636907590721165001, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0.028482258, y: 0.17613, z: -0.6563759}
+    m_Extent: {x: 0.19352877, y: 0.5014996, z: 0.7335583}
+  m_DirtyAABB: 0
 --- !u!1 &4310900206025959537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,7 +1548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 666153729786303200}
   - component: {fileID: 8269070892893433894}
-  - component: {fileID: 1802697098971495670}
+  - component: {fileID: 1297812639532306820}
   m_Layer: 0
   m_Name: Hood
   m_TagString: Untagged
@@ -1549,8 +1578,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4310900206025959537}
   m_Mesh: {fileID: -3137129725661375301, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
---- !u!23 &1802697098971495670
-MeshRenderer:
+--- !u!137 &1297812639532306820
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1563,7 +1592,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 3
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -1590,7 +1619,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -3137129725661375301, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0.005334705, y: -0.04688681, z: 0.6659879}
+    m_Extent: {x: 0.79084647, y: 0.252942, z: 0.7912851}
+  m_DirtyAABB: 0
 --- !u!1 &4356973077539250241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,7 +1722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310798918319299259}
   - component: {fileID: 7274201363991263452}
-  - component: {fileID: 3752806102467630751}
+  - component: {fileID: 1297812639532306822}
   m_Layer: 0
   m_Name: Door_L
   m_TagString: Untagged
@@ -1713,8 +1753,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4364368655469324705}
   m_Mesh: {fileID: -5225641529676788, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
---- !u!23 &3752806102467630751
-MeshRenderer:
+--- !u!137 &1297812639532306822
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1727,7 +1767,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 3
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -1755,7 +1795,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -5225641529676788, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0.038090944, y: 0.18651474, z: -0.6405625}
+    m_Extent: {x: 0.20593882, y: 0.49263656, z: 0.74937207}
+  m_DirtyAABB: 0
 --- !u!1 &4571643074232118049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,7 +2303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4471077528998536839}
   - component: {fileID: 4258966023865734022}
-  - component: {fileID: 1265255893446607131}
+  - component: {fileID: 1297812639532306819}
   m_Layer: 0
   m_Name: Trunkdoor
   m_TagString: Untagged
@@ -2282,8 +2333,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6692875684846794166}
   m_Mesh: {fileID: -3886988395164231451, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
---- !u!23 &1265255893446607131
-MeshRenderer:
+--- !u!137 &1297812639532306819
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2296,7 +2347,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 3
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -2323,7 +2374,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -3886988395164231451, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights:
+  - 0
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0.0016311109, y: -0.10142706, z: -0.07671642}
+    m_Extent: {x: 0.6274127, y: 0.10242425, z: 0.5861716}
+  m_DirtyAABB: 0
 --- !u!1 &6862077148147381434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,7 +2721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4747096607744779917}
   - component: {fileID: 490547356288124459}
-  - component: {fileID: 8418444545753010207}
+  - component: {fileID: 1297812639532306823}
   m_Layer: 0
   m_Name: Bumper_rear
   m_TagString: Untagged
@@ -2688,8 +2751,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7404968664232009996}
   m_Mesh: {fileID: -3713984261072941366, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
---- !u!23 &8418444545753010207
-MeshRenderer:
+--- !u!137 &1297812639532306823
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2702,7 +2765,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 3
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -2728,7 +2791,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -3713984261072941366, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights:
+  - 0
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0.6939035, y: -0.09686549, z: 0.43535286}
+    m_Extent: {x: 0.841265, y: 0.1326478, z: 0.54261357}
+  m_DirtyAABB: 0
 --- !u!1 &7962288626420172224
 GameObject:
   m_ObjectHideFlags: 0
