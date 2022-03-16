@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GlassCrashEffect : MonoBehaviour
 {
-    [SerializeField] private GlassPart[] _partsOfGlass;
+    [SerializeField] private List<GlassPart> _partsOfGlass;
     [SerializeField] private PartDeformation[] _makeAffectionParts;
-    [SerializeField] private GameObject _completeGlass;
+    [SerializeField] private GameObject[] _completeGlass;
 
     private void Awake()
     {
         for (int i = 0; i < _makeAffectionParts.Length; i++)
         {
             _makeAffectionParts[i].Hit += OnPlay;
+        }
+
+        for (int i = 0; i < _partsOfGlass.Count; i++)
+        {
+            _partsOfGlass[i].gameObject.SetActive(false);
         }
     }
 
@@ -31,14 +36,22 @@ public class GlassCrashEffect : MonoBehaviour
 
     private void BurstEffect(UnityEngine.Collision collision)
     {
-        _completeGlass.SetActive(false);
-        for (int i = 0; i < _partsOfGlass.Length; i++)
+        for (int i = 0; i < _completeGlass.Length; i++)
+        {
+            _completeGlass[i].SetActive(false);
+        }
+        for (int i = 0; i < _partsOfGlass.Count; i++)
         {
             _partsOfGlass[i].gameObject.SetActive(true);
         }
-        for (int i = 0; i < _partsOfGlass.Length; i++)
+        for (int i = 0; i < _partsOfGlass.Count; i++)
         {
-            _partsOfGlass[i].GetComponent<Rigidbody>().AddForce(-collision.rigidbody.velocity, ForceMode.VelocityChange);
+            if (_partsOfGlass[i])
+            {
+                _partsOfGlass[i].Crash();
+                Destroy(_partsOfGlass[i].gameObject, 5f);
+                _partsOfGlass.Remove(_partsOfGlass[i]);
+            }
         }
     }
 }

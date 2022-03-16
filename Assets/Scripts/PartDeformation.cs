@@ -33,12 +33,14 @@ public class PartDeformation : MonoBehaviour
             _timer = 0f;
             if (collision.rigidbody.GetComponent<Obstacle>())
             {
-                int randomPoint = UnityEngine.Random.Range(0, collision.contacts.Length);
-                _damage += collision.contacts[randomPoint].point.magnitude * _deformingSensitivity;
-                ParticleSystem sparcsEffect = Instantiate(_sparcsEffect, collision.contacts[randomPoint].point, Quaternion.identity, null);
-                Destroy(sparcsEffect, sparcsEffect.main.duration);
-                StartCoroutine(SmoothChangeValue(_deformingDuration, _currentHealth + _damage));
-                Hit?.Invoke(collision);
+                for (int i = 0; i < collision.contactCount; i++)
+                {
+                    _damage += collision.contacts[i].point.magnitude * _deformingSensitivity;
+                    ParticleSystem sparcsEffect = Instantiate(_sparcsEffect, collision.contacts[i].point, Quaternion.identity, null);
+                    Destroy(sparcsEffect, 0.5f);
+                    StartCoroutine(SmoothChangeValue(_deformingDuration, _currentHealth + _damage));
+                    Hit?.Invoke(collision);
+                }
             }
         }
     }

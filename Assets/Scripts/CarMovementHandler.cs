@@ -77,6 +77,7 @@ public class CarMovementHandler : MonoBehaviour
     {
         _currentCarState = CarStates.Accelerate;
         _animator.SetTrigger("Accelerate");
+        _shakingVirtualCamera.gameObject.SetActive(false);
         _startButton.gameObject.SetActive(false);
     }
 

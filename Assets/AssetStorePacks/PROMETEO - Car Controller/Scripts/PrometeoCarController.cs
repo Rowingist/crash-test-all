@@ -388,7 +388,7 @@ public class PrometeoCarController : MonoBehaviour
                 rearRightCollider.forwardFriction = newCurve;
 
                 float targetTorque = (accelerationMultiplier * speedInput) * throttleAxis;
-                float clampedTorque = Mathf.Clamp(targetTorque, 0f, 2000f);
+                float clampedTorque = Mathf.Clamp(targetTorque, -100f, 2000f);
                 //frontLeftCollider.motorTorque = (accelerationMultiplier * speedInput) * throttleAxis;
                 //frontRightCollider.motorTorque = (accelerationMultiplier * speedInput) * throttleAxis;
                 rearLeftCollider.motorTorque = clampedTorque;
