@@ -10,17 +10,11 @@ public class CarMovementHandler : MonoBehaviour
     [SerializeField] private Joystick _verticalMoveJoystick;
     [SerializeField] private PrometeoCarController _carController;
     [SerializeField] private float _moveSensitinity = 2f;
-    [SerializeField] private float _backToLineSpeed = 5f;
-    [SerializeField] private float _turnOffEngineDelay = 3f;
     [SerializeField] private Animator _animator;
-    [SerializeField] private float _firstAccelerationSeed = 40f;
     [SerializeField] private CinemachineVirtualCamera _shakingVirtualCamera;
     [SerializeField] private Button _startButton;
     [SerializeField] private WheelCollider _rearRightWheelCollider;
 
-    private Quaternion _startRotation;
-    private Rigidbody _rigidbody;
-    private float _lastInputY;
     private float _inputTorque;
 
     private CarStates _currentCarState;
@@ -31,15 +25,12 @@ public class CarMovementHandler : MonoBehaviour
     }
     private void Start()
     {
-        _startRotation = transform.rotation;
         _currentCarState = CarStates.BurnOut;
-        _lastInputY = 0f;
-        _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        _carController.Turn(_horizontalMoveJoystick.Delta.x * _moveSensitinity);
+        //_carController.Turn(_horizontalMoveJoystick.Delta.x * _moveSensitinity);
 
         if (_rearRightWheelCollider.motorTorque != 0f)
         {
@@ -53,17 +44,17 @@ public class CarMovementHandler : MonoBehaviour
         if (_currentCarState == CarStates.BurnOut)
         {
 
-            _carController.BurnOutRearDrive(_inputTorque);
+            //_carController.BurnOutRearDrive(_inputTorque);
         }
         else if (_currentCarState == CarStates.Accelerate)
         {
-            _carController.MoveForward(_inputTorque);
+            //_carController.MoveForward(_inputTorque);
         }
 
 
         if (_currentCarState == CarStates.Brakes)
         {
-            _carController.BrakeAllWheels();
+            //_carController.BrakeAllWheels();
         }
 
     }

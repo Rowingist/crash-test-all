@@ -1,3 +1,4 @@
+using Dreamteck.Splines.Examples;
 using System.Collections;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class CameraSwitcher : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInParent<CarMovementHandler>())
+        if (other.GetComponentInParent<TrainEngine>())
         {
             _firstTurnOffCamera.SetActive(false);
             StartCoroutine(DelayDeactivation(_activeTimeInSeconds));

@@ -28,7 +28,13 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - Armature
+    - Armature/Car_Root/Wheel_FR
+    - Armature/Car_Root/Wheel_FL
+    - Armature/Car_Root/Wheel_BL
+    - Armature/Car_Root/Wheel_BR
+    - Armature/Car_Root
     extraUserProperties: []
     clipAnimations: []
     isReadable: 0
@@ -284,7 +290,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

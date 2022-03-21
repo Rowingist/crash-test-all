@@ -5,7 +5,7 @@ using UnityEngine;
 public class GlassCrashEffect : MonoBehaviour
 {
     [SerializeField] private List<GlassPart> _partsOfGlass;
-    [SerializeField] private PartDeformation[] _makeAffectionParts;
+    [SerializeField] private Deformation[] _makeAffectionParts;
     [SerializeField] private GameObject[] _completeGlass;
 
     private void Awake()
@@ -29,12 +29,12 @@ public class GlassCrashEffect : MonoBehaviour
         }
     }
 
-    private void OnPlay(UnityEngine.Collision collision)
+    private void OnPlay(Collision collision)
     {
         BurstEffect(collision);
     }
 
-    private void BurstEffect(UnityEngine.Collision collision)
+    private void BurstEffect(Collision collision)
     {
         for (int i = 0; i < _completeGlass.Length; i++)
         {
