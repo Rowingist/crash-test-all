@@ -31,10 +31,11 @@ public class GlassCrashEffect : MonoBehaviour
 
     private void OnPlay(Collision collision)
     {
-        BurstEffect(collision);
+        BurstEffect();
     }
 
-    private void BurstEffect(Collision collision)
+    [ContextMenu("BurstEffecr")]
+    private void BurstEffect()
     {
         for (int i = 0; i < _completeGlass.Length; i++)
         {

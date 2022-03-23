@@ -3,18 +3,11 @@ using Dreamteck.Splines.Examples;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
 public class StartTutor : MonoBehaviour
 {
-    [SerializeField] private TrainEngine _train;
+    [SerializeField] private TrainMovement _train;
     [SerializeField] private GameLogic _game;
-    
-    private Button _tutorButton;
-
-    private void Awake()
-    {
-        _tutorButton = GetComponent<Button>();
-    }
+    [SerializeField] private Button _tutorButton;
 
     private void OnEnable()
     {
@@ -28,7 +21,7 @@ public class StartTutor : MonoBehaviour
 
     private void OnDepartueTrain()
     {
-        _train.GetComponent<SplineFollower>().followSpeed = _game.TrainStartSpeed;
-        gameObject.SetActive(false);
+        StartCoroutine(_train.ChangeSpeed(0, _game.TrainStartSpeed, 4f));
+        _tutorButton.gameObject.SetActive(false);
     }
 }

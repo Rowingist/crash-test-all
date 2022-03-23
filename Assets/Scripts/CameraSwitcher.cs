@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
-    [SerializeField] private GameObject _firstTurnOffCamera;
-    [SerializeField] private GameObject _secondTurnOffCamera;
+    [SerializeField] private GameObject _attentionCamera;
+    [SerializeField] private GameObject _mainCamera;
     [SerializeField] private float _activeTimeInSeconds;
+    [SerializeField] private float _timeScale;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponentInParent<TrainEngine>())
         {
-            _firstTurnOffCamera.SetActive(false);
+            _attentionCamera.SetActive(true);
+            Time.timeScale = _timeScale;
             StartCoroutine(DelayDeactivation(_activeTimeInSeconds));
         }
     }
@@ -20,7 +22,9 @@ public class CameraSwitcher : MonoBehaviour
     private IEnumerator DelayDeactivation(float delayInSeconds)
     {
         yield return new WaitForSeconds(delayInSeconds);
-        _secondTurnOffCamera.SetActive(false);
-        gameObject.SetActive(false);
+        Time.timeScale = 1f;
+        _attentionCamera.SetActive(false);
+        _mainCamera.SetActive(true);
+        Destroy(gameObject);
     }
 }

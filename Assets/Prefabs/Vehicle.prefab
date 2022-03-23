@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909811273081949}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &66571434162761445
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -121,11 +121,11 @@ Rigidbody:
   m_GameObject: {fileID: 66571434162761242}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &456174503950354149
@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809865106410}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &1322550044804108827
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -595,11 +595,11 @@ Rigidbody:
   m_GameObject: {fileID: 1322550044804108824}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &1525942848190564152
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809707434056}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &1828072850847904516
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -850,11 +850,11 @@ Rigidbody:
   m_GameObject: {fileID: 1828072850847904569}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &1898320410395752537
@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909811273081949}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &2181651554416422851
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1250,11 +1250,11 @@ Rigidbody:
   m_GameObject: {fileID: 2181651554416422848}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &2208908840032812338
@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809865106410}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &2208908840032812349
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1378,11 +1378,11 @@ Rigidbody:
   m_GameObject: {fileID: 2208908840032812338}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &2216899444321601303
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809707434056}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &2216899444321601298
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1506,11 +1506,11 @@ Rigidbody:
   m_GameObject: {fileID: 2216899444321601303}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &2271279789277897021
@@ -1601,7 +1601,8 @@ SkinnedMeshRenderer:
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 7636907590721165001, guid: fe44f20f332ab7c42a262175b674a3de, type: 3}
   m_Bones: []
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0.028482258, y: 0.17613, z: -0.6563759}
@@ -1704,7 +1705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809865106410}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &2435847099418301162
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1728,11 +1729,11 @@ Rigidbody:
   m_GameObject: {fileID: 2435847099418301167}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &2808602313525705264
@@ -1832,7 +1833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909811054228581}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &2808602313525705267
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1856,11 +1857,11 @@ Rigidbody:
   m_GameObject: {fileID: 2808602313525705264}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &3009168367970272147
@@ -2122,7 +2123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909811054228581}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &3158310372340477987
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2146,11 +2147,11 @@ Rigidbody:
   m_GameObject: {fileID: 3158310372340477984}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &3759909809601545038
@@ -2291,7 +2292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 5
+  _deformingSensitivity: 0.17
   _partRenderer: {fileID: 5365755784718923703}
   _numberInMeshRenderer: 1
 --- !u!114 &1489903552793515574
@@ -2306,7 +2307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 5
+  _deformingSensitivity: 0.17
   _partRenderer: {fileID: 3759909810216896924}
   _numberInMeshRenderer: 2
 --- !u!114 &4218205606218559828
@@ -2321,8 +2322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57bef71c9a80c4598eea768c91698b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeIntervalInSeconds: 1
-  _deformingDuration: 0.3
+  _timeIntervalInSeconds: 0.15
+  _deformingDuration: 0.6
   _affectedParts:
   - {fileID: 3291753988090120769}
   - {fileID: 1489903552793515574}
@@ -2443,7 +2444,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3759909809689048838}
-  - component: {fileID: 3759909809689048837}
+  - component: {fileID: 537287586}
+  - component: {fileID: 537287587}
+  - component: {fileID: 537287585}
   m_Layer: 6
   m_Name: RearRightWheel
   m_TagString: Untagged
@@ -2465,36 +2468,71 @@ Transform:
   m_Father: {fileID: 3759909811140314136}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!146 &3759909809689048837
-WheelCollider:
+--- !u!54 &537287586
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3759909809689048836}
-  m_Center: {x: 0, y: 0.15, z: 0}
-  m_Radius: 0.36
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 15
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.001
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
+--- !u!135 &537287587
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909809689048836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.31
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!59 &537287585
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909809689048836}
+  m_ConnectedBody: {fileID: 964587831}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: -0.15, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.99684685, y: 0.043879524, z: -1.2533371}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &3759909809707434063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,7 +2738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 5
+  _deformingSensitivity: 0.09
   _partRenderer: {fileID: 5365755784718923703}
   _numberInMeshRenderer: 5
 --- !u!114 &3271081153403427042
@@ -2715,8 +2753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57bef71c9a80c4598eea768c91698b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeIntervalInSeconds: 1
-  _deformingDuration: 0.3
+  _timeIntervalInSeconds: 0.15
+  _deformingDuration: 0.6
   _affectedParts:
   - {fileID: 1785124198393324803}
   - {fileID: 6508701747471346059}
@@ -2746,15 +2784,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3759909809804614120}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.179, z: -0.139}
+  m_LocalRotation: {x: -0, y: 0.37709606, z: -0, w: 0.9261741}
+  m_LocalPosition: {x: -0.537, y: -0.114, z: -0.724}
   m_LocalScale: {x: 1, y: 0.8375, z: 1}
   m_Children:
   - {fileID: 8956839249426488745}
   - {fileID: 6235640060793336365}
   m_Father: {fileID: 3759909809632631822}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 44.308, z: 0}
 --- !u!54 &964587831
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2764,13 +2802,13 @@ Rigidbody:
   m_GameObject: {fileID: 3759909809804614120}
   serializedVersion: 2
   m_Mass: 950
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 2
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &964587832
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2867,7 +2905,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3759909809985462179}
-  - component: {fileID: 3759909809985462188}
+  - component: {fileID: 923776082}
+  - component: {fileID: 923776083}
+  - component: {fileID: 923776081}
   m_Layer: 6
   m_Name: FrontLeftWheel
   m_TagString: Untagged
@@ -2889,36 +2929,71 @@ Transform:
   m_Father: {fileID: 3759909811140314136}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!146 &3759909809985462188
-WheelCollider:
+--- !u!54 &923776082
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3759909809985462178}
-  m_Center: {x: 0, y: 0.15, z: 0}
-  m_Radius: 0.36
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 15
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.001
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
+--- !u!135 &923776083
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909809985462178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.31
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!59 &923776081
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909809985462178}
+  m_ConnectedBody: {fileID: 964587831}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -1.010468, y: 0.21017882, z: 1.7841954}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &3759909810187554756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,7 +3168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 5
+  _deformingSensitivity: 0.17
   _partRenderer: {fileID: 5365755784718923703}
   _numberInMeshRenderer: 2
 --- !u!114 &1632320956069070363
@@ -3108,7 +3183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 5
+  _deformingSensitivity: 0.17
   _partRenderer: {fileID: 3759909810216896924}
   _numberInMeshRenderer: 3
 --- !u!114 &8796967556216990005
@@ -3123,8 +3198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57bef71c9a80c4598eea768c91698b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeIntervalInSeconds: 1
-  _deformingDuration: 0.3
+  _timeIntervalInSeconds: 0.15
+  _deformingDuration: 0.6
   _affectedParts:
   - {fileID: 5592879932948997319}
   - {fileID: 1632320956069070363}
@@ -3314,7 +3389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 0.3
+  _deformingSensitivity: 0.08
   _partRenderer: {fileID: 5365755784718923703}
   _numberInMeshRenderer: 6
 --- !u!114 &8550577760985041988
@@ -3329,7 +3404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 0.2
+  _deformingSensitivity: 0.08
   _partRenderer: {fileID: 3759909810216896923}
   _numberInMeshRenderer: 1
 --- !u!114 &6058298783418187637
@@ -3345,7 +3420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeIntervalInSeconds: 1
-  _deformingDuration: 0.3
+  _deformingDuration: 0.4
   _affectedParts:
   - {fileID: 6508701747471346059}
   - {fileID: 4442667288097460309}
@@ -3610,7 +3685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 5
+  _deformingSensitivity: 0.09
   _partRenderer: {fileID: 5365755784718923703}
   _numberInMeshRenderer: 4
 --- !u!114 &7130704133035256940
@@ -3625,8 +3700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57bef71c9a80c4598eea768c91698b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeIntervalInSeconds: 1
-  _deformingDuration: 0.3
+  _timeIntervalInSeconds: 0.15
+  _deformingDuration: 0.6
   _affectedParts:
   - {fileID: 4442667288097460309}
   - {fileID: 6508701747471346059}
@@ -3752,7 +3827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeIntervalInSeconds: 1
-  _deformingDuration: 0.3
+  _deformingDuration: 0.6
   _affectedParts:
   - {fileID: 8969528529268415535}
   _sparcsEffect: {fileID: 19839486, guid: 9f6e8efda3a5af24983aa491ef86446f, type: 3}
@@ -3768,7 +3843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 5
+  _deformingSensitivity: 0.087
   _partRenderer: {fileID: 5365755784718923703}
   _numberInMeshRenderer: 7
 --- !u!1 &3759909811054228580
@@ -3817,6 +3892,7 @@ GameObject:
   - component: {fileID: 4892031511309070048}
   - component: {fileID: 6855415242808731264}
   - component: {fileID: 6601782692987799799}
+  - component: {fileID: 1651034056}
   m_Layer: 6
   m_Name: Door_L
   m_TagString: Untagged
@@ -3864,7 +3940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 5
+  _deformingSensitivity: 0.09
   _partRenderer: {fileID: 3759909810216896926}
   _numberInMeshRenderer: 1
 --- !u!114 &6601782692987799799
@@ -3879,12 +3955,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57bef71c9a80c4598eea768c91698b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeIntervalInSeconds: 1
-  _deformingDuration: 0.3
+  _timeIntervalInSeconds: 0.15
+  _deformingDuration: 0.6
   _affectedParts:
-  - {fileID: 1083533155689680811}
   - {fileID: 6855415242808731264}
   _sparcsEffect: {fileID: 19839486, guid: 9f6e8efda3a5af24983aa491ef86446f, type: 3}
+--- !u!54 &1651034056
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909811120031502}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &3759909811126544499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3989,7 +4080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 2
+  _deformingSensitivity: 0.17
   _partRenderer: {fileID: 5365755784718923703}
   _numberInMeshRenderer: 3
 --- !u!114 &6559400101855229078
@@ -4005,7 +4096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeIntervalInSeconds: 1
-  _deformingDuration: 0.3
+  _deformingDuration: 0.4
   _affectedParts:
   - {fileID: 1083533155689680811}
   - {fileID: 3291753988090120769}
@@ -4024,7 +4115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 2
+  _deformingSensitivity: 0.17
   _partRenderer: {fileID: 3759909810216896924}
   _numberInMeshRenderer: 1
 --- !u!1 &3759909811140314143
@@ -4070,7 +4161,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3759909811174018508}
-  - component: {fileID: 3759909811174018509}
+  - component: {fileID: 872219710}
+  - component: {fileID: 872219711}
+  - component: {fileID: 872219709}
   m_Layer: 6
   m_Name: RearLeftWheel
   m_TagString: Untagged
@@ -4092,36 +4185,71 @@ Transform:
   m_Father: {fileID: 3759909811140314136}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!146 &3759909811174018509
-WheelCollider:
+--- !u!54 &872219710
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3759909811174018499}
-  m_Center: {x: 0, y: 0.15, z: 0}
-  m_Radius: 0.36
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 15
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.001
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
+--- !u!135 &872219711
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909811174018499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.31
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!59 &872219709
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909811174018499}
+  m_ConnectedBody: {fileID: 964587831}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: -0.15, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -1.0134591, y: 0.043879382, z: -1.253344}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &3759909811273081948
 GameObject:
   m_ObjectHideFlags: 0
@@ -4169,6 +4297,7 @@ GameObject:
   - component: {fileID: 3261486433310601264}
   - component: {fileID: 6089596688976000717}
   - component: {fileID: 3839418066832780793}
+  - component: {fileID: 1066783671}
   m_Layer: 6
   m_Name: Door_R
   m_TagString: Untagged
@@ -4216,7 +4345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322a140d76651a47aaa8d7113b40ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deformingSensitivity: 5
+  _deformingSensitivity: 0.09
   _partRenderer: {fileID: 3759909810216896925}
   _numberInMeshRenderer: 1
 --- !u!114 &3839418066832780793
@@ -4231,12 +4360,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c57bef71c9a80c4598eea768c91698b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeIntervalInSeconds: 1
-  _deformingDuration: 0.3
+  _timeIntervalInSeconds: 0.15
+  _deformingDuration: 0.6
   _affectedParts:
   - {fileID: 6089596688976000717}
-  - {fileID: 8969528529268415535}
   _sparcsEffect: {fileID: 19839486, guid: 9f6e8efda3a5af24983aa491ef86446f, type: 3}
+--- !u!54 &1066783671
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909811411106455}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &3759909811440861453
 GameObject:
   m_ObjectHideFlags: 0
@@ -4246,7 +4390,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3759909811440861454}
-  - component: {fileID: 3759909811440861455}
+  - component: {fileID: 1081280110}
+  - component: {fileID: 1081280111}
+  - component: {fileID: 1081280109}
   m_Layer: 6
   m_Name: FrontRightWheel
   m_TagString: Untagged
@@ -4268,36 +4414,71 @@ Transform:
   m_Father: {fileID: 3759909811140314136}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!146 &3759909811440861455
-WheelCollider:
+--- !u!54 &1081280110
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3759909811440861453}
-  m_Center: {x: 0, y: 0.15, z: 0}
-  m_Radius: 0.36
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 15
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.001
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
+--- !u!135 &1081280111
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909811440861453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.31
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!59 &1081280109
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759909811440861453}
+  m_ConnectedBody: {fileID: 964587831}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.99385047, y: 0.21017882, z: 1.78429}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &3759909811448912838
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,7 +4771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909811273081949}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &4439534461417474103
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4614,11 +4795,11 @@ Rigidbody:
   m_GameObject: {fileID: 4439534461417474100}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &4678281725394778388
@@ -4811,7 +4992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909811054228581}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &4860690758507797208
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4835,11 +5016,11 @@ Rigidbody:
   m_GameObject: {fileID: 4860690758507797213}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &4980119270332371853
@@ -5020,7 +5201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909811273081949}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &5175429354648803382
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5044,11 +5225,11 @@ Rigidbody:
   m_GameObject: {fileID: 5175429354648803371}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &5210832877608082904
@@ -5148,7 +5329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809865106410}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &5210832877608082907
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5172,11 +5353,11 @@ Rigidbody:
   m_GameObject: {fileID: 5210832877608082904}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &6147738697647478428
@@ -5316,7 +5497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809707434056}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &6517087476566454316
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5340,11 +5521,11 @@ Rigidbody:
   m_GameObject: {fileID: 6517087476566454305}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &6813471199296789339
@@ -5444,7 +5625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909811054228581}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &6813471199296789286
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5468,11 +5649,11 @@ Rigidbody:
   m_GameObject: {fileID: 6813471199296789339}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &7489349601820621907
@@ -5572,7 +5753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809707434056}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &7489349601820621918
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5596,11 +5777,11 @@ Rigidbody:
   m_GameObject: {fileID: 7489349601820621907}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &7551771186118967464
@@ -5700,7 +5881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809707434056}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &7551771186118967467
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5724,11 +5905,11 @@ Rigidbody:
   m_GameObject: {fileID: 7551771186118967464}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &8210705611299332457
@@ -5828,7 +6009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909811273081949}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &8210705611299332468
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5852,11 +6033,11 @@ Rigidbody:
   m_GameObject: {fileID: 8210705611299332457}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &8725123369987452066
@@ -5956,7 +6137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burstDirection: {fileID: 3759909809865106410}
-  _forcePower: 3
+  _forcePower: 6
 --- !u!64 &8725123369987452077
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5980,11 +6161,11 @@ Rigidbody:
   m_GameObject: {fileID: 8725123369987452066}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &8849288823307087278
