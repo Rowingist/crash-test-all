@@ -11,12 +11,12 @@ public class TrainHandleButtons : MonoBehaviour
 
     public void Activate(float delay)
     {
-        Invoke("SetOnState", delay);
+        Invoke(nameof(SetOnState), delay);
     }
 
     public void Deactivate(float delay)
     {
-        Invoke("SetOffState", delay);
+        Invoke(nameof(SetOffState), delay);
     }
 
     private void SetOnState()

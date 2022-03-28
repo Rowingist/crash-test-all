@@ -29,7 +29,7 @@ namespace Dreamteck.Splines.Examples
             if (_tracer is SplineFollower)
             {
                 SplineFollower follower = (SplineFollower)_tracer;
-                Debug.Log("Subscribing to follower");
+                //Debug.Log("Subscribing to follower");
                 follower.onBeginningReached += FollowerOnBeginningReached;
                 follower.onEndReached += FollowerOnEndReached;
             }
