@@ -1,18 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GlassCrashEffect : MonoBehaviour
 {
     [SerializeField] private List<GlassPart> _partsOfGlass;
-    [SerializeField] private Deformation[] _makeAffectionParts;
+    [SerializeField] private InteractionProcessor[] _makeAffectionParts;
     [SerializeField] private GameObject[] _completeGlass;
+    [SerializeField] private float _crashForce;
+    [SerializeField] private float _duration;
 
     private void Awake()
     {
         for (int i = 0; i < _makeAffectionParts.Length; i++)
         {
-            _makeAffectionParts[i].Hit += OnPlay;
+            _makeAffectionParts[i].Crashed += OnBurstEffect;
         }
 
         for (int i = 0; i < _partsOfGlass.Count; i++)
@@ -25,17 +26,11 @@ public class GlassCrashEffect : MonoBehaviour
     {
         for (int i = 0; i < _makeAffectionParts.Length; i++)
         {
-            _makeAffectionParts[i].Hit -= OnPlay;
+            _makeAffectionParts[i].Crashed -= OnBurstEffect;
         }
     }
 
-    private void OnPlay(Collision collision)
-    {
-        BurstEffect();
-    }
-
-    [ContextMenu("BurstEffecr")]
-    private void BurstEffect()
+    private void OnBurstEffect()
     {
         for (int i = 0; i < _completeGlass.Length; i++)
         {
@@ -49,7 +44,7 @@ public class GlassCrashEffect : MonoBehaviour
         {
             if (_partsOfGlass[i])
             {
-                _partsOfGlass[i].Crash();
+                _partsOfGlass[i].Crash(_crashForce, _duration);
                 Destroy(_partsOfGlass[i].gameObject, 5f);
                 _partsOfGlass.Remove(_partsOfGlass[i]);
             }

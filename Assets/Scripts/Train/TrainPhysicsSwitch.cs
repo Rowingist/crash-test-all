@@ -31,7 +31,6 @@ public class TrainPhysicsSwitch : MonoBehaviour
     public void BecomePhysics()
     {
         _trainEngine.GetComponent<SplineFollower>().enabled = false;
-        _splineComputer.enabled = true;
         _rigidbody.isKinematic = false;
         _rigidbody.interpolation = RigidbodyInterpolation.None;
         _rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
@@ -41,6 +40,7 @@ public class TrainPhysicsSwitch : MonoBehaviour
                 splinePositioner.enabled = false;
             _connectors[i].enabled = true;
         }
+        _splineComputer.enabled = true;
 
         for (int i = 0; i < _vagonsRigidbodies.Length; i++)
         {
@@ -74,7 +74,7 @@ public class TrainPhysicsSwitch : MonoBehaviour
     private IEnumerator BreakJoints(float actionTime)
     {
         yield return new WaitForSeconds(actionTime);
-        
+
         for (int i = 1; i < _vagonsRigidbodies.Length; i++)
         {
             if (_vagonsRigidbodies[i].TryGetComponent(out SpringJoint springJoint))

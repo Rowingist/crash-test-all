@@ -8,10 +8,49 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/FacebookSDK/Examples/MainMenu.unity
+    guid: 7c38a8c9adc9d5c4b869612e4033ead8
+  - enabled: 0
+    path: Assets/FacebookSDK/Examples/AccessTokenMenu.unity
+    guid: 67cb5b2387b8e4ec9b2fa69ad9510e9b
+  - enabled: 0
+    path: Assets/FacebookSDK/Examples/AppEvents.unity
+    guid: 68ab940fa15e34433bff18301686b080
+  - enabled: 0
+    path: Assets/FacebookSDK/Examples/AppLinks.unity
+    guid: 4ac12dfde6570493291366d0ab3eb20d
+  - enabled: 0
+    path: Assets/FacebookSDK/Examples/AppRequests.unity
+    guid: c2250c9c5cf00425384401321f8dffb4
+  - enabled: 0
+    path: Assets/FacebookSDK/Examples/DialogShare.unity
+    guid: 190c345841ecc464e9a122f04369757e
+  - enabled: 0
+    path: Assets/FacebookSDK/Examples/GraphRequest.unity
+    guid: 444ae7ddf432b457a97bfe42021075e3
+  - enabled: 0
+    path: Assets/FacebookSDK/Examples/LogView.unity
+    guid: c07ff0bf6bea74c2eb681ac0cae44265
+  - enabled: 0
+    path: Assets/FacebookSDK/Examples/Pay.unity
+    guid: 3ee189cdb21ea4bdb9d7022a0780c44c
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
+    path: Assets/Scenes/StartMenu.unity
     guid: ffbdbbe02ab9d4540a3500b327c1914d
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/Level_1.unity
     guid: abb124b081b260a429bbcef95b765042
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: 125251e62f044f84ca3b39424da100b9
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: 9ff6ee44687ebc44f8d515dd09456412
+  - enabled: 1
+    path: Assets/Scenes/Level_4.unity
+    guid: fc09f023b04b8c4489e6bc13f90524c6
+  - enabled: 1
+    path: Assets/Scenes/Level_5.unity
+    guid: aa931766098db934682fb2cab8699e78
   m_configObjects: {}

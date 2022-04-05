@@ -10,7 +10,6 @@ public class TrainMovement : MonoBehaviour
     [SerializeField] private SplineFollower _splineFollower;
     [SerializeField] private float _accelerationDuration;
     [SerializeField] private float _deccelerationDuration;
-    [SerializeField] private ParticleSystem[] _smokeBrakesEffects;
     [SerializeField] private TrainPhysicsSwitch _trainPhysicsSwitch;
 
     private float _speedBeforeAlert;
@@ -25,7 +24,6 @@ public class TrainMovement : MonoBehaviour
     {
         float newSpeed = _speedBeforeAlert - _speedDownStep;
         _trainPhysicsSwitch.SetForceDuration(0.2f);
-        StartCoroutine(PlayEffects(3f));
         StartCoroutine(ChangeSpeed(_speedBeforeAlert, newSpeed, _deccelerationDuration));
     }
 
@@ -37,27 +35,6 @@ public class TrainMovement : MonoBehaviour
             _splineFollower.followSpeed = Mathf.Lerp(currentSpeed, newSpeed, time * time);
             time += Time.deltaTime / duration;
             yield return null;
-        }
-
-        for (int i = 0; i < _smokeBrakesEffects.Length; i++)
-        {
-            _smokeBrakesEffects[i].Stop();
-        }
-    }
-
-    public IEnumerator PlayEffects(float duration)
-    {
-
-        for (int i = 0; i < _smokeBrakesEffects.Length; i++)
-        {
-            _smokeBrakesEffects[i].Play();
-        }
-
-        yield return new WaitForSeconds(duration);
-
-        for (int i = 0; i < _smokeBrakesEffects.Length; i++)
-        {
-            _smokeBrakesEffects[i].Stop();
         }
     }
 

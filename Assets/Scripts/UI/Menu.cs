@@ -3,16 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] private int _currentLevelNumber;
+
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "GameScene")
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "Level_" + _currentLevelNumber)
         {
-            SceneTransition.SwitchToScene("MenuScene");
+            SceneTransition.SwitchToScene("StartMenu");
         }
     }
 
-    public void GoToGame()
+    public void GoToNextScene()
     {
-        SceneTransition.SwitchToScene("GameScene");
+        SceneTransition.SwitchToScene("Level_" + (_currentLevelNumber + 1));
+    }
+
+    public void Restart()
+    {
+        SceneTransition.SwitchToScene("Level_" + _currentLevelNumber);
     }
 }

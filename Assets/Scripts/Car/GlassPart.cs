@@ -4,9 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class GlassPart : MonoBehaviour
 {
-    [SerializeField] private float _forcePower;
-    [SerializeField] private float _animationTime;
-
     private Rigidbody _rigidbody;
 
     private void Awake()
@@ -14,18 +11,18 @@ public class GlassPart : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Crash()
+    public void Crash(float force, float duration)
     {
         transform.SetParent(null);
-        StartCoroutine(Fly(_animationTime));
+        StartCoroutine(Fly(force, duration));
     }
 
-    private IEnumerator Fly(float actionTime)
+    private IEnumerator Fly(float force, float actionTime)
     {
         float time = 0;
         while (time < 1)
         {
-            _rigidbody.AddForce(transform.forward * _forcePower, ForceMode.VelocityChange);
+            _rigidbody.AddForce(transform.forward * force, ForceMode.VelocityChange);
             time += Time.deltaTime / actionTime;
             yield return null;
         }

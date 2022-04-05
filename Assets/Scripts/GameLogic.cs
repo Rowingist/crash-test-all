@@ -10,6 +10,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private ForkPoint[] _forkPoints;
     [SerializeField] private GameObject _startTutor;
     [SerializeField] private Button _pauseButton;
+    [SerializeField] private Button _playButton;
     [SerializeField] private TrainPhysicsSwitch _trainPhysicsSwitch;
     [SerializeField] private float _finalButtonsDelay = 4f;
 
@@ -25,6 +26,7 @@ public class GameLogic : MonoBehaviour
             _forkPointsList.Add(_forkPoints[i]);
         }
         _pauseButton.onClick.AddListener(OnPauseGame);
+        _playButton.onClick.AddListener(OnResumeGame);
         _trainPhysicsSwitch.Enabled += OnActivateButtons;
     }
 
@@ -35,6 +37,7 @@ public class GameLogic : MonoBehaviour
             _forkPoints[i].Reached += OnActivateHandleButtons;
         }
         _pauseButton.onClick.RemoveListener(OnPauseGame);
+        _playButton.onClick.RemoveListener(OnResumeGame);
         _trainPhysicsSwitch.Enabled -= OnActivateButtons;
     }
 
@@ -53,8 +56,18 @@ public class GameLogic : MonoBehaviour
 
     private void OnPauseGame()
     {
-        Time.timeScale = Time.timeScale == 1f ? 0f : 1f;
+        _playButton.gameObject.SetActive(true);
+        _pauseButton.gameObject.SetActive(false);
+        Time.timeScale = 0f;
     }
+
+    private void OnResumeGame()
+    {
+        _playButton.gameObject.SetActive(false);
+        _pauseButton.gameObject.SetActive(true);
+        Time.timeScale = 1f;
+    }
+
 
     private void OnActivateButtons()
     {

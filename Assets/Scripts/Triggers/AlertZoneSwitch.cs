@@ -13,6 +13,7 @@ public class AlertZoneSwitch : MonoBehaviour
     [SerializeField] private float _deccelerateDuration = 2;
     [SerializeField] private float _slowSpeed = 5f;
     [SerializeField] private float _timeToChose = 5f;
+    [SerializeField] private PlayableDirector _thirdCutScene;
 
     private TrainMovement _trainMovement;
     public float LastSpeed { get; private set; }
@@ -29,14 +30,18 @@ public class AlertZoneSwitch : MonoBehaviour
             StartCoroutine(StartCameraZomming());
         }
 
-        Invoke("LostChoise", _timeToChose);
+        Invoke(nameof(LostChoise), _timeToChose);
     }
 
     private void LostChoise()
     {
         _buttons.Deactivate(0);
         _shoulderCamera.gameObject.SetActive(false);
-        StartCoroutine(_trainMovement.ChangeSpeed(_slowSpeed, LastSpeed, 0.1f));
+        if (_trainMovement)
+        {
+            StartCoroutine(_trainMovement.ChangeSpeed(_slowSpeed, LastSpeed, 0.1f));
+            _thirdCutScene.Play();
+        }
     }
 
     private IEnumerator StartCameraZomming()
@@ -50,7 +55,7 @@ public class AlertZoneSwitch : MonoBehaviour
         float time = 0;
         while (time < 1)
         {
-            _shoulderCamera.m_Lens.FieldOfView = Mathf.Lerp(_shoulderCamera.m_Lens.FieldOfView, 10f, time);
+            _shoulderCamera.m_Lens.FieldOfView = Mathf.Lerp(_shoulderCamera.m_Lens.FieldOfView, 40f, time);
             time += Time.deltaTime / duration;
             yield return null;
         }
