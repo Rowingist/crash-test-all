@@ -9,7 +9,6 @@ public class AlertZoneSwitch : MonoBehaviour
     [SerializeField] private TrainHandleButtons _buttons;
     [SerializeField] private CinemachineVirtualCamera _shoulderCamera;
     [SerializeField] private PlayableDirector _directorToSwitchOff;
-    [SerializeField] private float _activateButtonsDelay = 1f;
     [SerializeField] private float _deccelerateDuration = 2;
     [SerializeField] private float _slowSpeed = 5f;
     [SerializeField] private float _timeToChose = 5f;
@@ -25,7 +24,7 @@ public class AlertZoneSwitch : MonoBehaviour
             trainMovement.SaveCurrentSpeed(LastSpeed);
             StartCoroutine(trainMovement.ChangeSpeed(LastSpeed, _slowSpeed, _deccelerateDuration));
             _shoulderCamera.gameObject.SetActive(true);
-            _buttons.Activate(_activateButtonsDelay);
+            Invoke(nameof(ActivateHandleButtons), 0.5f);
             _trainMovement = trainMovement;
             StartCoroutine(StartCameraZomming());
         }
@@ -35,7 +34,7 @@ public class AlertZoneSwitch : MonoBehaviour
 
     private void LostChoise()
     {
-        _buttons.Deactivate(0);
+        _buttons.gameObject.SetActive(false);
         _shoulderCamera.gameObject.SetActive(false);
         if (_trainMovement)
         {
@@ -59,6 +58,11 @@ public class AlertZoneSwitch : MonoBehaviour
             time += Time.deltaTime / duration;
             yield return null;
         }
+    }
+
+    private void ActivateHandleButtons()
+    {
+        _buttons.gameObject.SetActive(true);
     }
 
 }
