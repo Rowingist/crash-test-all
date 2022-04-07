@@ -53,4 +53,52 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_5.unity
     guid: aa931766098db934682fb2cab8699e78
+  - enabled: 1
+    path: Assets/AssetStorePacks/PolygonApocalypse/Scenes/Demo_City_Universal_RenderPipeline.unity
+    guid: 9ca7bdae70c06a546aa612594f2f6ace
+  - enabled: 1
+    path: Assets/AssetStorePacks/Epic Toon FX/Demo/Scenes/Extras/etfx_decal_test.unity
+    guid: 6dad6ea22f37cdc4783ddb9f84d5fd4a
+  - enabled: 1
+    path: Assets/AssetStorePacks/Feel/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreenBigText.unity
+    guid: dedb2bed56a01c241be42c5c5b5748ca
+  - enabled: 1
+    path: Assets/AssetStorePacks/MD_FullPackage/MD_Examples/MD_Examples_Scenes/AdvancedShapes/MDExample_MeshPainting_3D.unity
+    guid: 57d19b2766ce22548a744b539c116450
+  - enabled: 1
+    path: Assets/AssetStorePacks/MD_FullPackage/MD_Examples/MD_Examples_Scenes/AdvancedShapes/MDExample_PathCreator.unity
+    guid: 0a1c31cb9536e004e85c7503d1c82fb0
+  - enabled: 1
+    path: Assets/AssetStorePacks/MD_FullPackage/MD_Examples/MD_Examples_Scenes/Modifiers/MDExample_MeshDamage.unity
+    guid: 658d79537ab3e9e4880eb69520e59b62
+  - enabled: 1
+    path: Assets/AssetStorePacks/Epic Toon FX/Demo/Scenes/etfx_maindemo.unity
+    guid: 8bd1bda334a6f2440817b9493f9d7703
+  - enabled: 1
+    path: Assets/AssetStorePacks/Epic Toon FX/Demo/Scenes/etfx_swordcombat.unity
+    guid: e53e0f8c5f9e7eb40ae3f709aabd435f
+  - enabled: 1
+    path: Assets/AssetStorePacks/GUI Kit Casual Game/Scenes/DemoScene.unity
+    guid: 78addc77d730f4f38a4a7d5e73530376
+  - enabled: 1
+    path: Assets/AssetStorePacks/MD_FullPackage/MD_Examples/MD_Examples_Scenes/Modifiers/MDExample_SimpleModifiers.unity
+    guid: 0f6e5ef6b7c538f4c9e8daf82ca9b119
+  - enabled: 1
+    path: Assets/AssetStorePacks/Epic Toon FX/Demo/Scenes/etfx_powerups2.unity
+    guid: 3fa05937c0d498e4688b6eb2ba76e5da
+  - enabled: 1
+    path: Assets/AssetStorePacks/Feel/MMTools/Tools/MMSprites/BezierLineRenderer/Demo/MMBezierLineRenderer.unity
+    guid: 29378ecd9dd8d3d49a37d6729efd1ca5
+  - enabled: 1
+    path: Assets/AssetStorePacks/Feel/MMTools/Tools/MMSceneLoading/Demo/MMSceneLoadingDemoSceneA.unity
+    guid: 49d909d12efd2714f9b79de2eea67561
+  - enabled: 1
+    path: Assets/Dreamteck/Splines/Examples/Projection/Scene.unity
+    guid: eef173721c81cc8409ca7eec79c6a666
+  - enabled: 1
+    path: Assets/AssetStorePacks/Epic Toon FX/Demo/Scenes/etfx_powerups.unity
+    guid: 2c56ab0803e494e4d83581cfca9f47f2
+  - enabled: 1
+    path: Assets/AssetStorePacks/MD_FullPackage/MD_Examples/MD_Examples_Scenes/AdvancedShapes/MDExample_TunnelCreator.unity
+    guid: 896a224eaa2b8b24b8b90545f35957b0
   m_configObjects: {}
