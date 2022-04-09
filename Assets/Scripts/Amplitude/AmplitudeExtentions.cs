@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public static class AmplitudeExtensions
 {
@@ -8,38 +6,44 @@ public static class AmplitudeExtensions
     {
         var eventArguments = new Dictionary<string, object>
             {
-                {AmplitudeEvents.Params.Level, level}
+                {AmplitudeEvents.Params.LEVEL, level}
             };
-        amplitude.logEvent(AmplitudeEvents.LevelStart, eventArguments);
+        amplitude.logEvent(AmplitudeEvents.LEVEL_START, eventArguments);
     }
 
     public static void LogLevelRestart(this Amplitude amplitude, int level)
     {
         var eventArguments = new Dictionary<string, object>
             {
-                {AmplitudeEvents.Params.Level, level}
+                {AmplitudeEvents.Params.LEVEL, level}
             };
-        amplitude.logEvent(AmplitudeEvents.Restart, eventArguments);
+        amplitude.logEvent(AmplitudeEvents.RESTART, eventArguments);
     }
 
     public static void LogLevelComplete(this Amplitude amplitude, int level, int secondsSpent)
     {
         var eventArguments = new Dictionary<string, object>
             {
-                {AmplitudeEvents.Params.Level, level},
-                {AmplitudeEvents.Params.TimeSpent, secondsSpent}
+                {AmplitudeEvents.Params.LEVEL, level},
+                {AmplitudeEvents.Params.TIME_SPENT, secondsSpent}
             };
-        amplitude.logEvent(AmplitudeEvents.LevelComplete, eventArguments);
+        amplitude.logEvent(AmplitudeEvents.LEVEL_COMPLETE, eventArguments);
     }
 
-    public static void LogLevelFail(this Amplitude amplitude, int level, string reason, int secondsSpent)
+    public static void SetSessionCount(this Amplitude amplitude, int count)
     {
-        var eventArguments = new Dictionary<string, object>
-            {
-                {AmplitudeEvents.Params.Level, level},
-                {AmplitudeEvents.Params.Reason, reason},
-                {AmplitudeEvents.Params.TimeSpent, secondsSpent}
-            };
-        amplitude.logEvent(AmplitudeEvents.Fail, eventArguments);
+        amplitude.setUserProperty(AmplitudeEvents.SESSION_COUNT, count);
     }
+
+    public static void SetRegDay(this Amplitude amplitude, string date)
+    {
+        amplitude.setUserProperty(AmplitudeEvents.REG_DAY, date);
+    }
+
+    public static void SetDaysInGame(this Amplitude amplitude, int count)
+    {
+        amplitude.setUserProperty(AmplitudeEvents.DAYS_IN_GAME, count);
+    }
+
+
 }

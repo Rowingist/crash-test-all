@@ -43,13 +43,14 @@ public class GameLogic : MonoBehaviour
         Invoke(nameof(OnActivateTutor), 2f);
         _pauseButton.onClick.AddListener(OnPauseGame);
         _playButton.onClick.AddListener(OnResumeGame);
-        _trainPhysicsSwitch.Enabled += OnActivateFinalButtons;
 
         _startTutor.onClick.AddListener(OnDepartueTrain);
         _restartButton.onClick.AddListener(Restart);
 
         _accelerate.onClick.AddListener(OnAccelerateProcces);
         _deccelerate.onClick.AddListener(OnDeccelerateProcces);
+        _accelerate.onClick.AddListener(OnActivateFinalButtons);
+        _deccelerate.onClick.AddListener(OnActivateFinalButtons);
 
         _nextLevel.onClick.AddListener(OnContinue);
         _nextCamera.onClick.AddListener(OnNextCamera);
@@ -63,13 +64,14 @@ public class GameLogic : MonoBehaviour
     {
         _pauseButton.onClick.RemoveListener(OnPauseGame);
         _playButton.onClick.RemoveListener(OnResumeGame);
-        _trainPhysicsSwitch.Enabled -= OnActivateFinalButtons;
 
         _startTutor.onClick.RemoveListener(OnDepartueTrain);
         _restartButton.onClick.RemoveListener(Restart);
 
         _accelerate.onClick.RemoveListener(OnAccelerateProcces);
         _deccelerate.onClick.RemoveListener(OnDeccelerateProcces);
+        _accelerate.onClick.RemoveListener(OnActivateFinalButtons);
+        _deccelerate.onClick.RemoveListener(OnActivateFinalButtons);
 
         _pause.Paused -= OnPauseGame;
         _pause.IsPlaying -= OnResumeGame;
@@ -99,7 +101,6 @@ public class GameLogic : MonoBehaviour
         _pauseButton.gameObject.SetActive(true);
         Time.timeScale = 1f;
     }
-
 
     private void OnActivateFinalButtons()
     {

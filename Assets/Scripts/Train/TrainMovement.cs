@@ -5,8 +5,8 @@ using Dreamteck.Splines;
 
 public class TrainMovement : MonoBehaviour
 {
-    [SerializeField] private float _speedUpStep = 5f;
-    [SerializeField] private float _speedDownStep = 5f;
+    [SerializeField] private float _upSpeed = 5f;
+    [SerializeField] private float _downSpeed = 5f;
     [SerializeField] private SplineFollower _splineFollower;
     [SerializeField] private float _accelerationDuration;
     [SerializeField] private float _deccelerationDuration;
@@ -15,16 +15,14 @@ public class TrainMovement : MonoBehaviour
     private float _speedBeforeAlert;
     public void Accelerate()
     {
-        float newSpeed = _speedBeforeAlert + _speedUpStep;
         _trainPhysicsSwitch.SetForceDuration(1f);
-        StartCoroutine(ChangeSpeed(_speedBeforeAlert, newSpeed, _accelerationDuration));
+        StartCoroutine(ChangeSpeed(_speedBeforeAlert, _upSpeed, _accelerationDuration));
     }
 
     public void Deccelerate()
     {
-        float newSpeed = _speedBeforeAlert - _speedDownStep;
         _trainPhysicsSwitch.SetForceDuration(0.2f);
-        StartCoroutine(ChangeSpeed(_speedBeforeAlert, newSpeed, _deccelerationDuration));
+        StartCoroutine(ChangeSpeed(_speedBeforeAlert, _downSpeed, _deccelerationDuration));
     }
 
     public IEnumerator ChangeSpeed(float currentSpeed, float newSpeed, float duration)
@@ -35,6 +33,11 @@ public class TrainMovement : MonoBehaviour
             _splineFollower.followSpeed = Mathf.Lerp(currentSpeed, newSpeed, time * time);
             time += Time.deltaTime / duration;
             yield return null;
+        }
+
+        if(newSpeed == 0)
+        {
+            _splineFollower.enabled = false;
         }
     }
 

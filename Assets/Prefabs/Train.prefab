@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671966520779086485}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a212c074803b6824cae48ffa7abb84cf, type: 3}
   m_Name: 
@@ -2183,7 +2183,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671966520992283148}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a212c074803b6824cae48ffa7abb84cf, type: 3}
   m_Name: 
@@ -2756,7 +2756,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671966522295085891}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
   m_Name: 
@@ -5648,8 +5648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f34a08b4f66174fa4fbe0dcf001981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedUpStep: -30
-  _speedDownStep: 40
+  _upSpeed: 5
+  _downSpeed: 5
   _splineFollower: {fileID: 671966522328602878}
   _accelerationDuration: 1
   _deccelerationDuration: 5
@@ -6714,7 +6714,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671966522519049387}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a212c074803b6824cae48ffa7abb84cf, type: 3}
   m_Name: 
@@ -7639,7 +7639,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671966522526681172}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a212c074803b6824cae48ffa7abb84cf, type: 3}
   m_Name: 
@@ -8547,7 +8547,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671966522575408075}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a212c074803b6824cae48ffa7abb84cf, type: 3}
   m_Name: 
@@ -8908,6 +8908,7 @@ MonoBehaviour:
   - {fileID: 671966520890230012}
   - {fileID: 671966521869959058}
   - {fileID: 671966522014304731}
+  _duration: 0
 --- !u!1 &5709802559205856762
 GameObject:
   m_ObjectHideFlags: 0

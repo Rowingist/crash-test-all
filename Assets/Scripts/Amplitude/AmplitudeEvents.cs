@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class AmplitudeEvents : MonoBehaviour
 {
-    public const string GameStart = "game_start";
-    public const string LevelStart = "level_start";
-    public const string LevelComplete = "level_complete";
-    public const string Fail = "fail";
-    public const string Restart = "restart";
-    public const string MainMenu = "main_menu";
+    public const string GAME_START = "game_start";
+    public const string LEVEL_START = "level_start";
+    public const string LEVEL_COMPLETE = "level_complete";
+    public const string FAIL = "fail";
+    public const string RESTART = "restart";
+    public const string MAIN_MENU = "main_menu";
+    public const string SESSION_COUNT = "session_count";
+    public const string REG_DAY = "reg_day";
+    public const string DAYS_IN_GAME = "days_in_game";
 
     public static class Params
     {
-        public const string Level = "level";
-        public const string Reason = "reason";
-        public const string TimeSpent = "time_spent";
+        public const string COUNT = "count";
+        public const string LEVEL = "level";
+        public const string REASON = "reason";
+        public const string TIME_SPENT = "time_spent";
     }
 }

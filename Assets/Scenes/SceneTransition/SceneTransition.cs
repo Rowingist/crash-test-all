@@ -9,6 +9,7 @@ public class SceneTransition : MonoBehaviour
 {
     [SerializeField] private TMP_Text _loadingPrecentageText;
     [SerializeField] private Image _loadingProgressBar;
+    [SerializeField] private Image _blackScreen;
 
     private static SceneTransition _instance;
     private static bool _shouldPlayOpeningAnimation = false;
@@ -33,6 +34,7 @@ public class SceneTransition : MonoBehaviour
         if (_shouldPlayOpeningAnimation)
         {
             _componentAnimator.SetTrigger("sceneOpening");
+            _blackScreen.raycastTarget = false;
             _instance._loadingProgressBar.fillAmount = 1f;
             _shouldPlayOpeningAnimation = false;
         }
@@ -42,8 +44,8 @@ public class SceneTransition : MonoBehaviour
     {
         if (_loadingSceneOperation != null)
         {
-            _loadingPrecentageText.text = Mathf.RoundToInt(_loadingSceneOperation.progress * 100) + "%";
-            _loadingProgressBar.fillAmount = Mathf.Lerp(_loadingProgressBar.fillAmount, _loadingSceneOperation.progress, Time.deltaTime * 5f);
+            _loadingPrecentageText.text = Mathf.RoundToInt(_loadingSceneOperation.progress / 0.9f * 100) + "%";
+            _loadingProgressBar.fillAmount = Mathf.Lerp(_loadingProgressBar.fillAmount, _loadingSceneOperation.progress / 0.9f, Time.deltaTime * 5f);
         }
     }
 
@@ -51,6 +53,11 @@ public class SceneTransition : MonoBehaviour
     {
         _shouldPlayOpeningAnimation = true;
         _loadingSceneOperation.allowSceneActivation = true;
+    }
+
+    public void BlockInteraction()
+    {
+        _blackScreen.raycastTarget = true;
     }
 
 }

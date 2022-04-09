@@ -14,12 +14,6 @@ public class AppPaused : MonoBehaviour
         _isPaused = false;
     }
 
-    private void OnGUI()
-    {
-        if (_isPaused)
-            GUI.Label(new Rect(100, 100, 50, 30), "Game paused");
-    }
-
     private void OnApplicationFocus(bool hasFocus)
     {
         _isPaused = !hasFocus;

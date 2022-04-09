@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/FacebookSDK/Examples/Pay.unity
     guid: 3ee189cdb21ea4bdb9d7022a0780c44c
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
+    path: Assets/Scenes/Level_0.unity
     guid: ffbdbbe02ab9d4540a3500b327c1914d
   - enabled: 1
     path: Assets/Scenes/Level_1.unity
