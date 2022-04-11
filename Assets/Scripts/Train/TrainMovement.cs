@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Dreamteck.Splines;
 
@@ -12,37 +11,37 @@ public class TrainMovement : MonoBehaviour
     [SerializeField] private float _deccelerationDuration;
     [SerializeField] private TrainPhysicsSwitch _trainPhysicsSwitch;
 
-    private float _speedBeforeAlert;
+    private float _lastSpeed;
+
     public void Accelerate()
     {
         _trainPhysicsSwitch.SetForceDuration(1f);
-        StartCoroutine(ChangeSpeed(_speedBeforeAlert, _upSpeed, _accelerationDuration));
+        _splineFollower.followSpeed = _lastSpeed;
+        StartCoroutine(ChangeSpeed(_upSpeed, _accelerationDuration));
     }
 
     public void Deccelerate()
     {
         _trainPhysicsSwitch.SetForceDuration(0.2f);
-        StartCoroutine(ChangeSpeed(_speedBeforeAlert, _downSpeed, _deccelerationDuration));
+        _splineFollower.followSpeed = _lastSpeed;
+        StartCoroutine(ChangeSpeed(_downSpeed, _deccelerationDuration));
     }
 
-    public IEnumerator ChangeSpeed(float currentSpeed, float newSpeed, float duration)
+    public IEnumerator ChangeSpeed(float newSpeed, float duration)
     {
+        _lastSpeed = _splineFollower.followSpeed;
         float time = 0;
         while (time < 1)
         {
-            _splineFollower.followSpeed = Mathf.Lerp(currentSpeed, newSpeed, time * time);
+            _splineFollower.followSpeed = Mathf.Lerp(_splineFollower.followSpeed, newSpeed, time * time);
             time += Time.deltaTime / duration;
             yield return null;
         }
+        _splineFollower.followSpeed = newSpeed;
 
-        if(newSpeed == 0)
+        if (newSpeed == 0)
         {
             _splineFollower.enabled = false;
         }
-    }
-
-    public void SaveCurrentSpeed(float value)
-    {
-        _speedBeforeAlert = value;
     }
 }

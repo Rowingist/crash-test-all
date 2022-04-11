@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -44,7 +42,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (_loadingSceneOperation != null)
         {
-            _loadingPrecentageText.text = Mathf.RoundToInt(_loadingSceneOperation.progress / 0.9f * 100) + "%";
+            _loadingPrecentageText.text = Mathf.Round(_loadingSceneOperation.progress / 0.9f * 100) + "%";
             _loadingProgressBar.fillAmount = Mathf.Lerp(_loadingProgressBar.fillAmount, _loadingSceneOperation.progress / 0.9f, Time.deltaTime * 5f);
         }
     }

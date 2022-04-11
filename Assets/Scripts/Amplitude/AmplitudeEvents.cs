@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AmplitudeEvents : MonoBehaviour
@@ -20,5 +18,6 @@ public class AmplitudeEvents : MonoBehaviour
         public const string LEVEL = "level";
         public const string REASON = "reason";
         public const string TIME_SPENT = "time_spent";
+        public const string KEY = "7a7794644f2d7cd030c2c521b4028a18";
     }
 }

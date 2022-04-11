@@ -4,7 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(InteractionProcessor))]
 public class DamageablePart : MonoBehaviour
 {
-    [SerializeField, Range(0f, 100f)] private float _deformingSensitivity = 0.5f;
     [SerializeField] private SkinnedMeshRenderer _partRenderer;
     [SerializeField] private int _numberInMeshRenderer;
     [SerializeField] private float _timeIntervalInSeconds = 1f;
@@ -18,6 +17,7 @@ public class DamageablePart : MonoBehaviour
     private Vector3 _startLocalPosition;
     private Quaternion _startLocalRotation;
 
+    private float _deformingSensitivity = 2f;
     private const float ANDROID_TIME_ENCREASER = 3f;
     private void OnValidate()
     {
@@ -68,7 +68,7 @@ public class DamageablePart : MonoBehaviour
 
     public void SmoothTakeDamage(float damage)
     {
-        StartCoroutine(SmoothChangeValue(_deformingDuration, damage));
+        _partRenderer.SetBlendShapeWeight(_numberInMeshRenderer - 1, _currentHealth + damage * _deformingSensitivity);
     }
 
     private IEnumerator SmoothChangeValue(float actionTime, float damage)

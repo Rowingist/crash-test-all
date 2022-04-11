@@ -6,13 +6,13 @@ public class WheelsWeakness : MonoBehaviour
     [SerializeField] private List<WheelCollider> _wheelColliders;
     [SerializeField] private List<WheelRotator> _wheelRotators;
     [SerializeField] private List<Collider> _colliders;
-    [SerializeField] private InteractionProcessor[] _interactionProcessors;
+    [SerializeField] private NewInteractionProcessor[] _interactionProcessors;
 
     private void OnEnable()
     {
         for (int i = 0; i < _interactionProcessors.Length; i++)
         {
-            _interactionProcessors[i].Crashed += TearRandomWheel;
+            _interactionProcessors[i].Affected += TearRandomWheel;
         }
     }
 
@@ -20,11 +20,11 @@ public class WheelsWeakness : MonoBehaviour
     {
         for (int i = 0; i < _interactionProcessors.Length; i++)
         {
-            _interactionProcessors[i].Crashed -= TearRandomWheel;
+            _interactionProcessors[i].Affected -= TearRandomWheel;
         }
     }
 
-    private void TearRandomWheel()
+    private void TearRandomWheel(NewInteractionProcessor processor, Vector3 postition)
     {
         if (_wheelColliders.Count <= 2)
             return;

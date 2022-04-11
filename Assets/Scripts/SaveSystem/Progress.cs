@@ -1,12 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Progress : MonoBehaviour
 {
-    public int GameStartsCount { get; private set; }
     public int Level { get; private set; }
+    public int AsyncLevel { get; private set; }
+    public bool GameEnd { get; private set; }
 
+    public static Progress Instance;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        AsyncLevel = 5;
+    }
     public void Save()
     {
         SaveSystem.Save(this);
@@ -18,7 +32,8 @@ public class Progress : MonoBehaviour
         if (progressData != null)
         {
             Level = progressData.Llevel;
-            GameStartsCount = progressData.GameStartsCount;
+            AsyncLevel = progressData.AsyncLevel;
+            GameEnd = progressData.GameEnd;
         }
         else
         {
@@ -32,13 +47,26 @@ public class Progress : MonoBehaviour
         SaveSystem.DeleteFile();
     }
 
-    public void SetLevel(int value)
+    public void SetLevel(int level)
     {
-        Level = value;
+        Level = level;
+        Save();
     }
 
-    public void IncreaseGameStartsCount()
+    public void SetEndGame()
     {
-        GameStartsCount += 1;
+        GameEnd = true;
+        Save();
+    }
+
+    public void IncreaseLevelAfterGameEnd(int value)
+    {
+        AsyncLevel += value;
+        Save();
+    }
+
+    private void OnDestroy()
+    {
+        Save();
     }
 }

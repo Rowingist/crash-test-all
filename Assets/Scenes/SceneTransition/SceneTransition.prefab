@@ -86,8 +86,6 @@ GameObject:
   - component: {fileID: 8734498781205377809}
   - component: {fileID: 8734498781205377814}
   - component: {fileID: 4945987169600779072}
-  - component: {fileID: 46997002}
-  - component: {fileID: 2537252022950221459}
   m_Layer: 5
   m_Name: SceneTransition
   m_TagString: Untagged
@@ -150,32 +148,6 @@ MonoBehaviour:
   _loadingPrecentageText: {fileID: 8734498781995281671}
   _loadingProgressBar: {fileID: 8734498781649105386}
   _blackScreen: {fileID: 8734498780604999432}
---- !u!114 &46997002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8734498781205377808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08899db66d51369489cae69c09109e65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentLevelNumber: 1
-  _progress: {fileID: 2537252022950221459}
---- !u!114 &2537252022950221459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8734498781205377808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab059f4a2e19ca4a92431ddb8dab3ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8734498781263503353
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,10 +34,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 3.4833333333333334
+    m_Start: 2.55
     m_ClipIn: 0
     m_Asset: {fileID: 3521018354364925720}
-    m_Duration: 3.0166666666666666
+    m_Duration: 2.5
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7709699818157978265}
     m_EaseInDuration: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 12.033333333333333
+    m_Start: 10.100000000000001
     m_ClipIn: 0
     m_Asset: {fileID: 4242552972200541374}
     m_Duration: 3.5500000000000007
@@ -283,7 +283,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -7796908461105614206}
-    m_Duration: 3.4833333333333334
+    m_Duration: 2.55
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3307941072753097232}
     m_EaseInDuration: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 9.483333333333333
+    m_Start: 7.55
     m_ClipIn: 0
     m_Asset: {fileID: 4186631905319648111}
     m_Duration: 2.5500000000000007
@@ -502,10 +502,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 6.5
+    m_Start: 5.05
     m_ClipIn: 0
     m_Asset: {fileID: -699241419588656320}
-    m_Duration: 2.9833333333333325
+    m_Duration: 2.5
     m_TimeScale: 1
     m_ParentTrack: {fileID: 7998200595085388546}
     m_EaseInDuration: 0
