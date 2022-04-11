@@ -15,18 +15,22 @@ public class AlertZoneSwitch : MonoBehaviour
     [SerializeField] private PlayableDirector _thirdCutScene;
 
     private TrainMovement _trainMovement;
+    private bool _isUsed = false;
     public float LastSpeed { get; private set; }
     private void OnTriggerEnter(Collider other)
     {
+
         if(other.TryGetComponent(out TrainMovement trainMovement))
         {
+            if (_isUsed)
+                return;
             LastSpeed = trainMovement.GetComponent<SplineFollower>().followSpeed;
-            trainMovement.SaveCurrentSpeed(LastSpeed);
-            StartCoroutine(trainMovement.ChangeSpeed(LastSpeed, _slowSpeed, _deccelerateDuration));
+            StartCoroutine(trainMovement.ChangeSpeed(_slowSpeed, _deccelerateDuration));
             _shoulderCamera.gameObject.SetActive(true);
             Invoke(nameof(ActivateHandleButtons), 0.5f);
             _trainMovement = trainMovement;
             StartCoroutine(StartCameraZomming());
+            _isUsed = true;
         }
 
         Invoke(nameof(LostChoise), _timeToChose);
@@ -38,7 +42,7 @@ public class AlertZoneSwitch : MonoBehaviour
         _shoulderCamera.gameObject.SetActive(false);
         if (_trainMovement)
         {
-            StartCoroutine(_trainMovement.ChangeSpeed(_slowSpeed, LastSpeed, 0.1f));
+            StartCoroutine(_trainMovement.ChangeSpeed(LastSpeed, 0.1f));
             _thirdCutScene.Play();
         }
     }

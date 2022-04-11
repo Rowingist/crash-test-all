@@ -10,13 +10,15 @@ public class TrainPhysicsSwitch : MonoBehaviour
     [SerializeField] private TrainEngine _trainEngine;
     [SerializeField] private Wagon[] _wagons;
 
-    [SerializeField] private float _moveDuration;
     [SerializeField] private float _breakJointsDelay = 4f;
+    [SerializeField] private float _force = 4f;
 
     [SerializeField] private Node[] _connectors;
     [SerializeField] private SplineComputer _splineComputer;
     [SerializeField] private Rigidbody[] _vagonsRigidbodies;
+    [SerializeField] private Rigidbody[] _bodiesToKeepImpulse;
 
+    private float _moveDuration;
     private SplineFollower _follower;
     private Rigidbody _rigidbody;
     private float Speed => _follower.followSpeed;
@@ -31,6 +33,7 @@ public class TrainPhysicsSwitch : MonoBehaviour
     public void BecomePhysics()
     {
         _trainEngine.GetComponent<SplineFollower>().enabled = false;
+
         _rigidbody.isKinematic = false;
         _rigidbody.interpolation = RigidbodyInterpolation.None;
         _rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
@@ -38,9 +41,9 @@ public class TrainPhysicsSwitch : MonoBehaviour
         {
             if (_wagons[i].TryGetComponent(out SplinePositioner splinePositioner))
                 splinePositioner.enabled = false;
-            _connectors[i].enabled = true;
+            //_connectors[i].enabled = true;
         }
-        _splineComputer.enabled = true;
+        //_splineComputer.enabled = true;
 
         for (int i = 0; i < _vagonsRigidbodies.Length; i++)
         {
@@ -57,14 +60,14 @@ public class TrainPhysicsSwitch : MonoBehaviour
     private IEnumerator GoForward(float actionTime)
     {
         float time = 0;
-        Vector3 newVelocity = transform.forward * Speed;
+        Vector3 newVelocity = transform.forward * _force;
 
         while (time < 1f)
         {
             _rigidbody.velocity = newVelocity;
-            for (int i = 0; i < _vagonsRigidbodies.Length; i++)
+            for (int i = 0; i < _bodiesToKeepImpulse.Length; i++)
             {
-                _vagonsRigidbodies[i].velocity = newVelocity;
+                _bodiesToKeepImpulse[i].velocity = newVelocity;
             }
             time += Time.deltaTime / actionTime;
             yield return null;

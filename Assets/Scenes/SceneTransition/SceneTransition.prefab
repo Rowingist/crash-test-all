@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loadingPrecentageText: {fileID: 8734498781995281671}
   _loadingProgressBar: {fileID: 8734498781649105386}
+  _blackScreen: {fileID: 8734498780604999432}
 --- !u!1 &8734498781263503353
 GameObject:
   m_ObjectHideFlags: 0

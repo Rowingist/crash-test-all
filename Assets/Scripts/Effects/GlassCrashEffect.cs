@@ -4,7 +4,7 @@ using UnityEngine;
 public class GlassCrashEffect : MonoBehaviour
 {
     [SerializeField] private List<GlassPart> _partsOfGlass;
-    [SerializeField] private InteractionProcessor[] _makeAffectionParts;
+    [SerializeField] private NewInteractionProcessor[] _makeAffectionParts;
     [SerializeField] private GameObject[] _completeGlass;
     [SerializeField] private float _crashForce;
     [SerializeField] private float _duration;
@@ -13,7 +13,7 @@ public class GlassCrashEffect : MonoBehaviour
     {
         for (int i = 0; i < _makeAffectionParts.Length; i++)
         {
-            _makeAffectionParts[i].Crashed += OnBurstEffect;
+            _makeAffectionParts[i].Affected += OnBurstEffect;
         }
 
         for (int i = 0; i < _partsOfGlass.Count; i++)
@@ -26,11 +26,11 @@ public class GlassCrashEffect : MonoBehaviour
     {
         for (int i = 0; i < _makeAffectionParts.Length; i++)
         {
-            _makeAffectionParts[i].Crashed -= OnBurstEffect;
+            _makeAffectionParts[i].Affected -= OnBurstEffect;
         }
     }
 
-    private void OnBurstEffect()
+    private void OnBurstEffect(NewInteractionProcessor processor, Vector3 postition)
     {
         for (int i = 0; i < _completeGlass.Length; i++)
         {

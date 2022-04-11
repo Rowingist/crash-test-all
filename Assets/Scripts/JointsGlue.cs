@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JointsGlue : MonoBehaviour
 {
-    [SerializeField] private InteractionProcessor[] _interactionProcessors;
+    [SerializeField] private NewInteractionProcessor[] _interactionProcessors;
     [SerializeField] private float _hitBakeDelay = 1f;
 
     private Vector3 _startLocalPosition;
@@ -14,7 +14,7 @@ public class JointsGlue : MonoBehaviour
     {
         for (int i = 0; i < _interactionProcessors.Length; i++)
         {
-            _interactionProcessors[i].Crashed += OnEnableJoints;
+            _interactionProcessors[i].Affected += OnEnableJoints;
         }
     }
 
@@ -34,11 +34,11 @@ public class JointsGlue : MonoBehaviour
     {
         for (int i = 0; i < _interactionProcessors.Length; i++)
         {
-            _interactionProcessors[i].Crashed -= OnEnableJoints;
+            _interactionProcessors[i].Affected -= OnEnableJoints;
         }
     }
 
-    private void OnEnableJoints()
+    private void OnEnableJoints(NewInteractionProcessor processor, Vector3 postition)
     {
         Destroy(this, _hitBakeDelay);
     }

@@ -1,45 +1,47 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Dreamteck.Splines;
 
 public class TrainMovement : MonoBehaviour
 {
-    [SerializeField] private float _speedUpStep = 5f;
-    [SerializeField] private float _speedDownStep = 5f;
+    [SerializeField] private float _upSpeed = 5f;
+    [SerializeField] private float _downSpeed = 5f;
     [SerializeField] private SplineFollower _splineFollower;
     [SerializeField] private float _accelerationDuration;
     [SerializeField] private float _deccelerationDuration;
     [SerializeField] private TrainPhysicsSwitch _trainPhysicsSwitch;
 
-    private float _speedBeforeAlert;
+    private float _lastSpeed;
+
     public void Accelerate()
     {
-        float newSpeed = _speedBeforeAlert + _speedUpStep;
         _trainPhysicsSwitch.SetForceDuration(1f);
-        StartCoroutine(ChangeSpeed(_speedBeforeAlert, newSpeed, _accelerationDuration));
+        _splineFollower.followSpeed = _lastSpeed;
+        StartCoroutine(ChangeSpeed(_upSpeed, _accelerationDuration));
     }
 
     public void Deccelerate()
     {
-        float newSpeed = _speedBeforeAlert - _speedDownStep;
         _trainPhysicsSwitch.SetForceDuration(0.2f);
-        StartCoroutine(ChangeSpeed(_speedBeforeAlert, newSpeed, _deccelerationDuration));
+        _splineFollower.followSpeed = _lastSpeed;
+        StartCoroutine(ChangeSpeed(_downSpeed, _deccelerationDuration));
     }
 
-    public IEnumerator ChangeSpeed(float currentSpeed, float newSpeed, float duration)
+    public IEnumerator ChangeSpeed(float newSpeed, float duration)
     {
+        _lastSpeed = _splineFollower.followSpeed;
         float time = 0;
         while (time < 1)
         {
-            _splineFollower.followSpeed = Mathf.Lerp(currentSpeed, newSpeed, time * time);
+            _splineFollower.followSpeed = Mathf.Lerp(_splineFollower.followSpeed, newSpeed, time * time);
             time += Time.deltaTime / duration;
             yield return null;
         }
-    }
+        _splineFollower.followSpeed = newSpeed;
 
-    public void SaveCurrentSpeed(float value)
-    {
-        _speedBeforeAlert = value;
+        if (newSpeed == 0)
+        {
+            _splineFollower.enabled = false;
+        }
     }
 }
